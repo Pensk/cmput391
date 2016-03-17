@@ -1,0 +1,5 @@
+<html>
+
+Register Page
+
+</html>
