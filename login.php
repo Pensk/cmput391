@@ -23,7 +23,7 @@
 <body>
 <h2>Login page</h2>
 <br />
-<form action="server/login.php" method="POST">
+<form method="POST">
   <input type="text" name="username" placeholder="Username"><br />
   <input type="password" name="password" placeholder="Password"><br />
   <input type="submit" name="submit">
