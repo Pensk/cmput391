@@ -13,7 +13,8 @@
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
-    echo "<script>alert('".$user->register($username,$password,$firstname,$lastname,$address,$email,$phone)."')</script>";
+    $user->register($username,$password,$firstname,$lastname,$address,$email,$phone);
+    header('Location: /login.php');
   }
 ?>
 
