@@ -1,6 +1,10 @@
 <?
+
+include_once('constants.php');
+
 //user module & class
 //Handles User Login & Registration
+
 Class User {
 
   //Holds the database object for interacting with the DB
