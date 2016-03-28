@@ -13,7 +13,7 @@
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
-    echo "<script>alert(".$user->register($username,$password,$firstname,$lastname,$address,$email,$phone).")</script>";
+    echo "<script>alert('".$user->register($username,$password,$firstname,$lastname,$address,$email,$phone)."')</script>";
   }
 ?>
 
