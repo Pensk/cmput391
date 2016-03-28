@@ -1,6 +1,6 @@
 <?
 
-include_once('constants.php');
+include_once("constants.php");
 
 //user module & class
 //Handles User Login & Registration
