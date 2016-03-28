@@ -11,6 +11,7 @@ Class User {
   private $db;
 
   function __construct($db=NULL){
+    //Make a new connection only if we don't have one already.
     if(is_object($db))
     {
         $this->db = $db;
@@ -24,13 +25,19 @@ Class User {
     }
   }
 
+  //Register a new user with form data from register.php
   public function register($username,$password,$firstname,$lastname,$address,$email,$phone){
-    //sql = "";
-    //$stmt = $this->db->prepare(sql);
-    //$stmt->execute();
-    return $username;
+    sql = "INSERT INTO users (user_name, password, date_registered) VALUES (:username, :password, now())";
+    $stmt = $this->db->prepare(sql);
+    $stmt->execute(["username"=>$username,"password"=>$password]);
+
+    sql = "INSERT INTO persons (user_name, first_name, last_name, address, email, phone) VALUES (:username, :firstname, :lastname, :address, :email, :phone)";
+    $stmt = $this->db->prepare(sql);
+    $stmt->execute(["username"=>$username,"firstname"=>$firstname,"lastname"=>$lastname,"address"=>$address,"email"=>$email,"phone"=>$phone]);
+
   }
 
+  //Check a users login data from login.php with the data stored in the Database
   public function login($name, $pass){
 
   }
