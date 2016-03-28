@@ -27,12 +27,12 @@ Class User {
 
   //Register a new user with form data from register.php
   public function register($username,$password,$firstname,$lastname,$address,$email,$phone){
-    sql = "INSERT INTO users (user_name, password, date_registered) VALUES (:username, :password, now())";
-    $stmt = $this->db->prepare(sql);
+    $sql = "INSERT INTO users (user_name, password, date_registered) VALUES (:username, :password, now())";
+    $stmt = $this->db->prepare($sql);
     $stmt->execute(["username"=>$username,"password"=>$password]);
 
-    sql = "INSERT INTO persons (user_name, first_name, last_name, address, email, phone) VALUES (:username, :firstname, :lastname, :address, :email, :phone)";
-    $stmt = $this->db->prepare(sql);
+    $sql = "INSERT INTO persons (user_name, first_name, last_name, address, email, phone) VALUES (:username, :firstname, :lastname, :address, :email, :phone)";
+    $stmt = $this->db->prepare($sql);
     $stmt->execute(["username"=>$username,"firstname"=>$firstname,"lastname"=>$lastname,"address"=>$address,"email"=>$email,"phone"=>$phone]);
 
   }
