@@ -6,13 +6,13 @@
 <h2>Register page</h2>
 <br />
 <form>
-  <input type="text" name="username" placeholder="Username">
-  <input type="password" name="password" placeholder="Password">
-  <input type="text" name="firstname" placeholder="First Name">
-  <input type="text" name="lastname" placeholder="Last Name">
-  <input type="text" name="address" placeholder="Address">
-  <input type="text" name="email" placeholder="Email">
-  <input type="text" name="phone" placeholder="Phone Number">
+  <input type="text" name="username" placeholder="Username"><br />
+  <input type="password" name="password" placeholder="Password"><br />
+  <input type="text" name="firstname" placeholder="First Name"><br />
+  <input type="text" name="lastname" placeholder="Last Name"><br />
+  <input type="text" name="address" placeholder="Address"><br />
+  <input type="text" name="email" placeholder="Email"><br />
+  <input type="text" name="phone" placeholder="Phone Number"><br />
   <input type="submit" action="server/register.php" method="POST">
 </form>
 </body>
