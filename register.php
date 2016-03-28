@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Register/title>
+  <title>Register</title>
 </head>
 <body>
 <h2>Register page</h2>
