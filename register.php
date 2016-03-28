@@ -14,7 +14,7 @@
     $phone = $_POST['phone'];
 
     $user->register($username,$password,$firstname,$lastname,$address,$email,$phone);
-    header('Location: /login.php');
+    header('Location: login.php');
   }
 ?>
 
