@@ -3,8 +3,8 @@
 
   if(isset($_POST['submit']))
   {
-    include_once('module/user.php');
-
+    include_once('/module/user.php');
+    $user = new User;
     $username = $_POST['username'];
     $password = $_POST['password'];
     $firstname = $_POST['firstname'];
