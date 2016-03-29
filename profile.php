@@ -21,8 +21,10 @@
   //echo var_dump($disp->displayImages());
   foreach($disp->displayImages() as $img):
     //http://stackoverflow.com/questions/20556773/php-display-image-blob-from-mysql
-    echo $img["description"].': <img src="data:image/jpeg;base64,'.base64_encode($img["thumbnail"]).'" width="244" height="244" /> '.$img["owner_name"].'<br />';
-
+    //echo $img["description"].': <img src="data:image/jpeg;base64,'.base64_encode($img["thumbnail"]).'" width="244" height="244" /> '.$img["owner_name"].'<br />';
+    ?>
+    <img src="data:image/jpeg;base64,<?php echo base64_encode($img["thumbnail"]); ?>" />
+    <?php
   endforeach;
 ?>
 </html>
