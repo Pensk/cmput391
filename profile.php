@@ -18,10 +18,10 @@
 <a href="upload.php"><h4>Upload an Image</h4></a>
 <br />
 <?php
-  echo var_dump($disp->displayImages());
+  //echo var_dump($disp->displayImages());
   foreach($disp->displayImages() as $img):
     //http://stackoverflow.com/questions/20556773/php-display-image-blob-from-mysql
-    echo $img["description"].': <img src="data:image/jpeg;base64,'.base64_encode($img["photo"]).'" width="244" height="244" /> '.$img["owner_name"].'<br />';
+    echo $img["description"].': <img src="data:image/jpeg;base64,'.base64_encode($img["thumbnail"]).'" width="244" height="244" /> '.$img["owner_name"].'<br />';
 
   endforeach;
 ?>
