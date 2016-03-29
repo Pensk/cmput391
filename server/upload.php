@@ -5,7 +5,7 @@
   $upload = new Upload;
 
   $user = $_SESSION["user"];
-  $image = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+  $image = file_get_contents($_FILES["image"]["tmp_name"]);
   $descr = $_FILES["image"]["name"];
 
   if($_FILES["image"]["size"] != 0){
