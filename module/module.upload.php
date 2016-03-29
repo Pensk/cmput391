@@ -1,4 +1,7 @@
 <?php
+
+include_once("constants.php");
+
 //Upload Module used to insert images into the database
 Class Upload {
 
