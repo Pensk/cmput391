@@ -23,10 +23,10 @@ Class Upload {
     }
   }
 
-  public function uploadImage($user,$image){
-    $sql = "INSERT INTO images (owner_name, thumbnail, photo) VALUES (:username, :thumb, :photo)";
+  public function uploadImage($user,$descr,$image){
+    $sql = "INSERT INTO images (owner_name, description, thumbnail, photo) VALUES (:username, :descr, :thumb, :photo)";
     $stmt = $this->db->prepare($sql);
-    $stmt->execute(["username"=>$user,"thumb"=>$image,"photo"=>$image]);
+    $stmt->execute(["username"=>$user,"descr"=>$descr,"thumb"=>$image,"photo"=>$image]);
   }
 
 }
