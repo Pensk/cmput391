@@ -9,5 +9,7 @@
 <html>
 
 <h2>Profile Page - <?= $_SESSION["user"] ?></h2>
+<br />
+<a href="upload.php"><h4>Upload an Image</h4></a>
 
 </html>
