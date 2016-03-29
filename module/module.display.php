@@ -34,7 +34,7 @@ Class Display {
     $sql = "SELECT photo FROM images WHERE photo_id = :imgid";
     $stmt = $this->db->prepare($sql);
     $stmt->execute(["imgid"=>$imgid]);
-    return $stmt->fetch()["photo"];
+    return var_dump($stmt->fetch());
   }
 
 }
