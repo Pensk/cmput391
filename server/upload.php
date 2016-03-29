@@ -8,7 +8,8 @@
   $image = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
   $descr = $_FILES["image"]["name"];
 
-  $upload->uploadImage($user,$descr,$image);
-
+  if($_FILES["image"]["size"] <= 64000){
+    $upload->uploadImage($user,$descr,$image);
+  }
   header('Location: ../profile.php');
 ?>
