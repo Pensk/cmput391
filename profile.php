@@ -4,7 +4,7 @@
   if(!isset($_SESSION["user"])){
     header("Location: login.php");
   }
-  include_once('module/constants.php');
+  //include_once('module/constants.php');
   include_once('module/module.display.php');
   $disp = new Display;
 

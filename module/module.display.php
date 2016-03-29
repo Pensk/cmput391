@@ -1,5 +1,5 @@
 <?php
-include_once('consants.php');
+include_once('constants.php');
 //display module for displaying images from the database
 
 Class Display {
@@ -26,7 +26,7 @@ Class Display {
   public function displayImages(){
     $sql = "SELECT * FROM images";
     $stmt = $this->db->prepare($sql);
-    $stmt->execte();
+    $stmt->execute();
     return $stmt->fetchAll();
   }
 
