@@ -4,7 +4,7 @@
 
   $imgid = $_GET["id"];
 
-  $img = Display->getImageFromId($imgid);
+  $img = $disp->getImageFromId($imgid);
 
   header('Content-type: image/jpeg');
 
