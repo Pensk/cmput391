@@ -18,7 +18,6 @@
 <a href="upload.php"><h4>Upload an Image</h4></a>
 <br />
 <?php
-  //echo var_dump($disp->displayImages());
   foreach($disp->displayImages() as $img):
     //stackoverflow.com/questions/13214602/how-to-display-an-blob-image-stored-in-mysql-database
     echo $img["description"].': <img src="server/image.php?id='.$img["photo_id"].'" width="244" height="244" /> '.$img["owner_name"].'<br />';
