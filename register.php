@@ -1,10 +1,14 @@
 <?php
   session_start();
 
+  //Check if the form was submitted
   if(isset($_POST['submit']))
   {
+    //Make an instance of the User class
     include_once("module/module.user.php");
     $user = new User;
+
+    //fetch all the form data
     $username = $_POST['username'];
     $password = $_POST['password'];
     $firstname = $_POST['firstname'];
@@ -13,7 +17,9 @@
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
+    //Register a new user with it
     $user->register($username,$password,$firstname,$lastname,$address,$email,$phone);
+    //Send them to login
     header('Location: login.php');
   }
 ?>
