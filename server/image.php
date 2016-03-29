@@ -6,7 +6,7 @@
 
   $img = $disp->getImageFromId($imgid);
 
-  header('Content-type: image/jpeg');
+  header('Content-type: image/png');
 
   echo $image;
 ?>
