@@ -8,5 +8,5 @@
 
   header('Content-type: image/png');
 
-  echo $image;
+  echo $img;
 ?>
