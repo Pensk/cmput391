@@ -40,7 +40,7 @@ Class User {
   //Check a users login data from login.php with the data stored in the Database
   //return true if the user's data matches
   public function login($name, $pass){
-    $sql = "SELECT * FROM users WHERE user_name = :user";
+    $sql = "SELECT password FROM users WHERE user_name = :user";
     $stmt = $this->db->prepare($sql);
     $stmt->execute(["user"=>$name]);
     return $stmt->fetch()["password"] == $pass;
