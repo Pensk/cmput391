@@ -1,5 +1,12 @@
+<?php
+  session_start();
+  if(!isset($_SESSION["user"])){
+    header("Location: login.php");
+  }
+?>
+
 <html>
 
-Profile Page
+<h2>Profile Page -<?= $_SESSION["user"] ?></h2>
 
 </html>
