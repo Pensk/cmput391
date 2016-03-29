@@ -24,7 +24,7 @@ Class Upload {
   }
 
   public function uploadImage($user,$image){
-    $sql = "INSERT INTO images (owner_name, thumbnail, photo) VALUES (:username, :thumb, :photo";
+    $sql = "INSERT INTO images (owner_name, thumbnail, photo) VALUES (:username, :thumb, :photo)";
     $stmt = $this->db->prepare($sql);
     $stmt->execute(["username"=>$user,"thumb"=>$image,"photo"=>$image]);
   }
