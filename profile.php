@@ -19,7 +19,7 @@
 <?php
   foreach($disp->displayImages() as $img):
     //http://stackoverflow.com/questions/20556773/php-display-image-blob-from-mysql
-    echo '<img src="data:image/jpeg;base64,'.base64_encode($img["photo"]->load()).'" />';
+    echo '<img src="data:image/jpeg;base64,'.base64_encode($img["photo"]).'" />';
 
   endforeach;
 ?>
