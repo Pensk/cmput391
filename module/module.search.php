@@ -25,10 +25,10 @@ Class Search {
     if($keys!=0){
       for($temp=0;$temp<$keys;%temp++){
         if($temp==0){
-          $templist=" (table).(name) like ".$thelist[0];
+          $templist=" (table).(namevalue) like ".$thelist[0];
         }
         else{
-          $templist=$templist." and (table).(name) like ".$thelist[$temp];
+          $templist=$templist." and (table).(namevalue) like ".$thelist[$temp];
         }
       }
     }
