@@ -21,7 +21,7 @@
         <ul>
           <?php
             foreach($group->groupsOwned($user) as $g){
-              echo "<li><a href='groupedit.php?id=".$g["group_id"]."'".$g["group_id"].": ".$g["group_name"]." - created: ".$g["date_created"]."</a></li>";
+              echo "<li><a href='groupedit.php?id=".$g["group_id"]."'>".$g["group_id"].": ".$g["group_name"]." - created: ".$g["date_created"]."</a></li>";
             }
           ?>
         </ul>
