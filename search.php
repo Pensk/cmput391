@@ -1,18 +1,15 @@
 <?php
 // if logged in...
-  session_start();
+  
   if(isset($_POST["submit"])){
+    include_once(module/module.search.php);
     $searchtext = $_POST["Searchtext"];
     $thelist = explode(' ',$searchtext);
     $keys = count($thelist);
-    $tp = $_POST["Timeperiod"];
-    //if $keys==0....
-    //$query='select * from [img_data_table] where [img_data_table].name like $thelist(1).....
-    //
-    //
-    //link to ora module
-  }else{
-    // to search page
+    $tps = $_POST["startdate"];
+    $tpe = $_POST["enddate"];
+    $result->search($thelist,$keys.$tps,$tpe);
+    // link to display 
   }
 ?>
 <html>
@@ -24,6 +21,8 @@
 <form method="POST">
     <input type="text" name="Searchtext" placeholder="Searchtext"><br />
     <input type="text" name="Timeperiod" placeholder="Timeperiod">
+    <input type="text" name="Startdate" placeholder="startdate yy/mm/dd"><br />
+    <input type="text" name="enddate" placeholder="enddate yy/mm/dd">
     <input type="submit" name="submit">
   </form>
   </body>
