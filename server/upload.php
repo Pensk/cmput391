@@ -15,6 +15,6 @@
     $upload->uploadImage($user,$descr,$image);
   }
   //redirect them back to their profile page
-  var_dump($_FILES["image"]);
+  var_dump($_FILES);
   //header('Location: ../profile.php');
 ?>
