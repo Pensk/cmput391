@@ -9,10 +9,14 @@
   include_once('module/module.display.php');
   $disp = new Display;
 
+  $pageTitle = "Profile";
 ?>
 
-<html>
+<?php
+include_once('template/header.php');
+?>
 
+<body>
 <h2>Profile Page - <?= $_SESSION["user"] ?></h2>
 <br />
 <a href="upload.php"><h4>Upload an Image</h4></a>
@@ -24,4 +28,8 @@
 
   endforeach;
 ?>
-</html>
+</body>
+
+<?php
+include_once('template/footer.php');
+?>

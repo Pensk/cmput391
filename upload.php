@@ -6,10 +6,9 @@
   }
 ?>
 
-<html>
-<head>
-<title>Upload Images</title>
-</head>
+<?php
+include_once('template/header.php');
+?>
 <body>
 <h3>Upload Page</h3>
 
@@ -28,4 +27,6 @@ Upload (Max 64KB): <input name="image[]" webkitdirectory directory multiple type
 </form>
 
 </body>
-</html>
+<?php
+include_once('template/footer.php');
+?>

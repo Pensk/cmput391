@@ -21,12 +21,12 @@
       echo "<script>alert('Incorrect Login');</script>";
     }
   }
+  $pageTitle = "Login";
 ?>
 
-<html>
-<head>
-  <title>Login</title>
-</head>
+<?php
+include_once('template/header.php');
+?>
 
 <body>
 <h2>Login page</h2>
@@ -50,4 +50,6 @@
 
 <?php endif; ?>
 </body>
-</html>
+<?php
+include_once('template/footer.php');
+?>

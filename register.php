@@ -22,12 +22,12 @@
     //Send them to login
     header('Location: login.php');
   }
+  $pageTitle = "Register";
 ?>
 
-<html>
-<head>
-  <title>Register</title>
-</head>
+<?php
+include_once('template/header.php');
+?>
 <body>
 <h2>Register page</h2>
 <br />
@@ -42,4 +42,6 @@
   <input type="submit" name="submit">
 </form>
 </body>
-</html>
+<?php
+include_once('template/footer.php');
+?>
