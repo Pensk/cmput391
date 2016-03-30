@@ -4,6 +4,10 @@
   include_once("../module/module.upload.php");
   $upload = new Upload;
 
+
+  var_dump($_FILES["image"]);
+
+  /*
   //prepare the variables to be inserted in the database
   $user = $_SESSION["user"];
   //get the binary data from the image file
@@ -15,6 +19,7 @@
     $upload->uploadImage($user,$descr,$image);
   }
   //redirect them back to their profile page
-  var_dump($_FILES);
+
   //header('Location: ../profile.php');
+  */
 ?>
