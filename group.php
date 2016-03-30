@@ -20,8 +20,8 @@
         <p>You own these groups:</p>
         <ul>
           <?php
-            foreach($group->groupsOwned($user) as $group){
-              echo "<li>".$group["group_id"].": ".$group["group_name"]." - created: ".$group["date_created"]."</li>";
+            foreach($group->groupsOwned($user) as $g){
+              echo "<li>".$g["group_id"].": ".$g["group_name"]." - created: ".$g["date_created"]."</li>";
             }
           ?>
         </ul>
@@ -30,8 +30,8 @@
         <p>You belong to these groups:</p>
         <ul>
           <?php
-            foreach($group->groupsIn($user) as $group){
-              echo "<li>".$group["group_id"].": ".$group["group_name"]." - created: ".$group["date_created"]."</li>";
+            foreach($group->groupsIn($user) as $g){
+              echo "<li>".$g["group_id"].": ".$g["group_name"]." - created: ".$g["date_created"]."</li>";
             }
           ?>
         </ul>
