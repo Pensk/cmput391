@@ -39,5 +39,13 @@
       return $stmt->fetchAll();
     }
 
+    //return true if a user owns a specific group
+    public function isOwner($user,$groupid) {
+      $sql = "SELECT user_name as user FROM groups WHERE group_id = :id";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["id"=>$groupid]);
+      return $stmt->fetch()["user"] == $user;
+    }
+
   }
 ?>
