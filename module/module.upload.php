@@ -23,6 +23,7 @@ Class Upload {
     }
   }
 
+  //insert an image into the database
   public function uploadImage($user,$descr,$image){
     $sql = "INSERT INTO images (owner_name, description, thumbnail, photo) VALUES (:username, :descr, :thumb, :photo)";
     $stmt = $this->db->prepare($sql);
