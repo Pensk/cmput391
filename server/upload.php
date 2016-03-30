@@ -5,7 +5,9 @@
   $upload = new Upload;
 
   $user = $_SESSION["user"];
-  if($_POST["permitted"] == "true"){
+  if($_POST["permitted"] == "group"){
+    $permit = $_POST["group"];
+  } elseif($_POST["permitted"] == "true") {
     $permit = 1;
   } else {
     $permit = 2;

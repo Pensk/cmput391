@@ -18,10 +18,11 @@
 <input type="hidden" name="MAX_FILE_SIZE" value="64000" />
 Upload (Max 64KB): <input name="image[]" webkitdirectory directory multiple type="file" /><br />
 <input type="radio" name="permitted" value="false" checked />Private
-<input type="radio" name="permitted" value="true" />Public<br />
+<input type="radio" name="permitted" value="true" />Public
+<input type="radio" name="permitted" value="group"/>Or Group ID: <input type="text" name="group" placeholder="group ID" /><br />
 <input type="text" name="description" placeholder="Description" /><br />
 <input type="text" name="location" placeholder="Location" /><br />
-<input type="date" name="time" placeholder="date" /><br />
+<input type="date" name="time" placeholder="Date (Y-M-D)" /><br />
 <input type="text" name="subject" placeholder="Subject" /><br />
 <input type="submit" value="Upload" />
 </form>
