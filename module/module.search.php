@@ -20,7 +20,30 @@ Class Search {
         $this->db = new PDO($dsn, DB_USER, DB_PASS, $opt);
     }
   } 
-      
-}
-
+  function search($thelist=array(),$keys=0,$startdate="",$enddate=""){
+    $templist="";$tempstartdate="";$tempenddate="";
+    if($keys!=0){
+      for($temp=0;$temp<$keys;%temp++){
+        if($temp==0){
+          $templist=" (table).(name) like ".$thelist[0];
+        }
+        else{
+          $templist=$templist." and (table).(name) like ".$thelist[$temp];
+        }
+      }
+    }
+    if($startdate!=""){
+      $tempstartdate=" (table).(datevalue)>".$startdate
+    }
+    if($enddate!=""){
+      $tempenddate=" (table).(datevalue)<".$enddate
+    }
+    if($keys==0 and $startdate=="" and $enddate==""){
+      $sql="select * from (table)"
+      //execute
+    }else{
+      $sql="select * from (table) where".$templist.$tempstartdate.$tempenddate
+      //execute
+    }
+  }
 ?>
