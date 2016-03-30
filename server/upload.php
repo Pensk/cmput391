@@ -17,7 +17,7 @@
 
   $c = count($_FILES["image"]["name"]);
 
-  for($x=0;x<$c;x++){
+  for($x=0;$x<$c;$x++){
     $image = file_get_contents($_FILES["image"]["tmp_name"][$x]);
     $upload->uploadImage($user,$permit,$descr,$loc,$time,$subj,$image);
   }
