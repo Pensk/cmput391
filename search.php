@@ -20,9 +20,8 @@
 <body>
 <form method="POST">
     <input type="text" name="Searchtext" placeholder="Searchtext"><br />
-    <input type="text" name="Timeperiod" placeholder="Timeperiod">
-    <input type="text" name="Startdate" placeholder="startdate yy/mm/dd"><br />
-    <input type="text" name="enddate" placeholder="enddate yy/mm/dd">
+    <input type="text" name="Startdate" placeholder="startdate yyyy/mm/dd"><br />
+    <input type="text" name="enddate" placeholder="enddate yyyy/mm/dd">
     <input type="submit" name="submit">
   </form>
   </body>
