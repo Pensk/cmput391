@@ -5,6 +5,8 @@
     $searchtext = $_POST["Searchtext"];
     $thelist = explode(' ',$searchtext);
     $keys = count($thelist);
+    $tp = $_POST["Timeperiod"];
+    //if $keys==0....
     //$query='select * from [img_data_table] where [img_data_table].name like $thelist(1).....
     //
     //
@@ -20,7 +22,8 @@
 </head>
 <body>
 <form method="POST">
-    <input type="text" name="Searchtext" placeholder="Searchtext">
+    <input type="text" name="Searchtext" placeholder="Searchtext"><br />
+    <input type="text" name="Timeperiod" placeholder="Timeperiod">
     <input type="submit" name="submit">
   </form>
   </body>
