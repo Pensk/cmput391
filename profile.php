@@ -19,6 +19,7 @@ include_once('template/header.php');
 <body>
 <h2>Profile Page - <?= $_SESSION["user"] ?></h2>
 <br />
+<a href="group.php"><h4>Groups</h4></a>
 <a href="upload.php"><h4>Upload an Image</h4></a>
 <br />
 <?php
