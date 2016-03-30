@@ -25,24 +25,30 @@ Class Search {
     if($keys!=0){
       for($temp=0;$temp<$keys;%temp++){
         if($temp==0){
-          $templist=" (table).(namevalue) like ".$thelist[0];
+          $templist=" (imgaes.subject like ".$thelist[0]." or imgaes.place like ".$thelist[0]." or images.description like ".$thelist[0].")";
         }
         else{
-          $templist=$templist." and (table).(namevalue) like ".$thelist[$temp];
+          $templist=$templist." and (images.(namevalue) like ".$thelist[$temp]." or images.place like ".$thelist[$temp]." or images.description like ".$thelist[$temp].")";
         }
       }
     }
     if($startdate!=""){
-      $tempstartdate=" (table).(datevalue)>".$startdate;
+      $tempstartdate=" images.timing>".$startdate;
+      if($keys!=0){
+        $tempstartdate=" and".$tempstartdate
+      }
     }
     if($enddate!=""){
-      $tempenddate=" (table).(datevalue)<".$enddate;
+      $tempenddate=" images.timing<".$enddate;
+      if($keys!=0){
+        $tempenddate=" and".$tempenddate
+      }
     }
     if($keys==0 and $startdate=="" and $enddate==""){
-      $sql="select * from (table)"
+      $sql="select * from images"
       //execute
     }else{
-      $sql="select * from (table) where".$templist.$tempstartdate.$tempenddate;
+      $sql="select * from images where".$templist.$tempstartdate.$tempenddate;
       //execute
     }
   }
