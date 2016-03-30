@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Index"
+$pageTitle = "Index";
 include_once('template/header.php');
  ?>
 <body>
