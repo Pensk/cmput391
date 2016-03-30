@@ -8,7 +8,7 @@
   if($_POST["permitted"] == "true"){
     $permit = 1;
   } else {
-    $permit = 0;
+    $permit = 2;
   }
   $descr = $_POST["description"];
   $loc = $_POST["location"];
@@ -22,19 +22,5 @@
     $upload->uploadImage($user,$permit,$descr,$loc,$time,$subj,$image);
   }
 
-  /*
-  //prepare the variables to be inserted in the database
-  $user = $_SESSION["user"];
-  //get the binary data from the image file
-  $image = file_get_contents($_FILES["image"]["tmp_name"]);
-  $descr = $_FILES["image"]["name"];
-
-  //make sure the user uploaded an image of a valid size!
-  if($_FILES["image"]["size"] != 0){
-    $upload->uploadImage($user,$descr,$image);
-  }
-  //redirect them back to their profile page
-
-  //header('Location: ../profile.php');
-  */
+  header('Location: ../profile.php');
 ?>
