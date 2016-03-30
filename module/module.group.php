@@ -21,7 +21,13 @@
       }
     }
 
-    
+    //return groups owned by a user
+    public function groupsOwned($user) {
+      $sql = "SELECT * FROM groups WHERE user_name = :user";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["user"=>$user]);
+      return $stmt->fetchAll();
+    }
 
   }
 ?>
