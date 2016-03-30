@@ -1,6 +1,8 @@
 <?php
-  //Group module for handling managing user Groups
+  include_once('constants.php');
 
+
+  //Group module for handling managing user Groups
   Class Group {
 
     //Holds the database object for interacting with the DB
