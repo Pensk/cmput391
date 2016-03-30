@@ -21,7 +21,7 @@ Upload (Max 64KB): <input name="image[]" webkitdirectory directory multiple type
 <input type="radio" name="permitted" value="true" />Public<br />
 <input type="text" name="description" placeholder="Description" /><br />
 <input type="text" name="location" placeholder="Location" /><br />
-<input type="date" name="time" /><br />
+<input type="date" name="time" placeholder="date" /><br />
 <input type="text" name="subject" placeholder="Subject" /><br />
 <input type="submit" value="Upload" />
 </form>
