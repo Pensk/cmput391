@@ -35,17 +35,17 @@ Class Search {
     if($startdate!=""){
       $tempstartdate=" images.timing>".$startdate;
       if($keys!=0){
-        $tempstartdate=" and".$tempstartdate
+        $tempstartdate=" and".$tempstartdate;
       }
     }
     if($enddate!=""){
       $tempenddate=" images.timing<".$enddate;
       if($keys!=0){
-        $tempenddate=" and".$tempenddate
+        $tempenddate=" and".$tempenddate;
       }
     }
     if($keys==0 and $startdate=="" and $enddate==""){
-      $sql="select * from images"
+      $sql="select * from images";
       //execute
     }else{
       $sql="select * from images where".$templist.$tempstartdate.$tempenddate;
