@@ -4,8 +4,19 @@
   include_once("../module/module.upload.php");
   $upload = new Upload;
 
+  $user = $_SESSION["user"];
+  $permit = $_POST["permitted"];
+  $descr = $_POST["description"];
+  $loc = $_POST["location"];
+  $time = strtotime($_POST["time"]);
+  $subj = $_POST["subject"];
 
-  var_dump($_FILES["image"]);
+  $c = count($_FILES["image"]["name"]);
+
+  for($x=0;x<$c;x++){
+    $image = file_get_contents($_FILES["image"]["tmp_name"][$x]);
+    $upload->uploadImage($user,$permit,$descr,$loc,$time,$subj,$image);
+  }
 
   /*
   //prepare the variables to be inserted in the database

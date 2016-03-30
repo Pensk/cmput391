@@ -24,10 +24,12 @@ Class Upload {
   }
 
   //insert an image into the database
-  public function uploadImage($user,$descr,$image){
-    $sql = "INSERT INTO images (owner_name, description, thumbnail, photo) VALUES (:username, :descr, :thumb, :photo)";
+  public function uploadImage($user,$permit,$descr,$loc,$time,$subj,$image){
+    $sql = "INSERT INTO images (owner_name, permitted, subject, place, timing, description, thumbnail, photo) VALUES (:username, :permit, :subj, :loc, :timing, :descr, :thumb, :photo)";
     $stmt = $this->db->prepare($sql);
-    $stmt->execute(["username"=>$user,"descr"=>$descr,"thumb"=>$image,"photo"=>$image]);
+    $stmt->execute(["username"=>$user,"permit"=>$permit, "subj"=>$subj,
+                    "loc"=>$loc,"timing"=>$time,"descr"=>$descr,
+                    "thumb"=>$image, "photo"=>$image, ]);
   }
 
 }
