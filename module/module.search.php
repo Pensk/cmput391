@@ -33,16 +33,16 @@ Class Search {
       }
     }
     if($startdate!=""){
-      $tempstartdate=" (table).(datevalue)>".$startdate
+      $tempstartdate=" (table).(datevalue)>".$startdate;
     }
     if($enddate!=""){
-      $tempenddate=" (table).(datevalue)<".$enddate
+      $tempenddate=" (table).(datevalue)<".$enddate;
     }
     if($keys==0 and $startdate=="" and $enddate==""){
       $sql="select * from (table)"
       //execute
     }else{
-      $sql="select * from (table) where".$templist.$tempstartdate.$tempenddate
+      $sql="select * from (table) where".$templist.$tempstartdate.$tempenddate;
       //execute
     }
   }
