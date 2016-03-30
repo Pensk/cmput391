@@ -31,5 +31,13 @@
       return $stmt->fetchAll();
     }
 
+    //return groups a user is in
+    public function groupsIn($user) {
+      $sql = "SELECT * FROM groups join group_lists on group_lists.group_id = groups.group_id WHERE friend_id = :user";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["user"=>$user]);
+      return $stmt->fetchAll();
+    }
+
   }
 ?>

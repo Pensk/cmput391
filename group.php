@@ -29,7 +29,11 @@
       <div class="col-md-6">
         <p>You belong to these groups:</p>
         <ul>
-
+          <?php
+            foreach($group->groupsIn($user) as $group){
+              echo "<li>".$group["group_id"].": ".$group["group_name"]." - created: ".$group["date_created"]."</li>";
+            }
+          ?>
         </ul>
       </div>
     </div>
