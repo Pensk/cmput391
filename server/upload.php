@@ -5,10 +5,14 @@
   $upload = new Upload;
 
   $user = $_SESSION["user"];
-  $permit = $_POST["permitted"];
+  if($_POST["permitted"] == "true"){
+    $permit = 1;
+  } else {
+    $permit = 0;
+  }
   $descr = $_POST["description"];
   $loc = $_POST["location"];
-  $time = strtotime($_POST["time"]);
+  $time = date('Y-m-d',strtotime($_POST["time"]));
   $subj = $_POST["subject"];
 
   $c = count($_FILES["image"]["name"]);
