@@ -22,13 +22,22 @@
   include_once('template/header.php');
 ?>
 <body>
+  <div class="container">
 <form method="POST">
     <input type="text" name="searchtext" placeholder="Searchtext"><br />
     <input type="date" name="startdate" placeholder="Startdate yyyy/mm/dd"><br />
     <input type="date" name="enddate" placeholder="Enddate yyyy/mm/dd">
     <input type="submit" name="submit">
   </form>
-  <?php if(isset($result)) echo var_dump($result); ?>
+  <hr />
+  <div class="row">
+  <?= foreach($result as $img):  ?>
+  <div class="col-md-4 text-center">
+  <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="img-responsive" /><br />
+  <h4><strong><?= $img["description"] ?></strong></h4> - <?= $img["owner_name"] ?>
+  </div>
+</div>
+</div>
   </body>
 <?php
   include_once('template/footer.php');
