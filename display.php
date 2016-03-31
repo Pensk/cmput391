@@ -31,7 +31,7 @@ include_once('template/header.php');
     echo "<h3>You don't have permission to view this image</h3>";
   else:
 ?>
-    <img src="server/image.php?id=<?= $imgid ?>" class="img-resonsive" /><br />
+    <img src="server/image.php?id=<?= $imgid ?>" class="img-resonsive center-block" /><br />
 
 <?php
   endif;
