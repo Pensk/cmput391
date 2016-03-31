@@ -1,28 +1,35 @@
 <?php
 // if logged in...
-  
+  session_start();
+  if(!isset($_SESSION["user"])){
+    header('Location: login.php');
+  }
+
   if(isset($_POST["submit"])){
-    include_once(module/module.search.php);
-    $searchtext = $_POST["Searchtext"];
+    include_once('module/module.search.php');
+    $search = new Search;
+    $searchtext = $_POST["searchtext"];
     $thelist = explode(' ',$searchtext);
     $keys = count($thelist);
     $tps = $_POST["startdate"];
     $tpe = $_POST["enddate"];
-    $result->search($thelist,$keys.$tps,$tpe);
-    // link to display 
+    $result = $search->search($thelist,$keys,$tps,$tpe);
+    // link to display
   }
-?>
-<html>
 
-<head>
-  <title>Search Page</title>
-</head>
+  $pageTitle = "Search Page";
+
+  include_once('template/header.php');
+?>
 <body>
 <form method="POST">
-    <input type="text" name="Searchtext" placeholder="Searchtext"><br />
-    <input type="text" name="Startdate" placeholder="startdate yyyy/mm/dd"><br />
-    <input type="text" name="enddate" placeholder="enddate yyyy/mm/dd">
+    <input type="text" name="searchtext" placeholder="Searchtext"><br />
+    <input type="date" name="startdate" placeholder="Startdate yyyy/mm/dd"><br />
+    <input type="date" name="enddate" placeholder="Enddate yyyy/mm/dd">
     <input type="submit" name="submit">
   </form>
+  <?= var_dump($result) ?>
   </body>
-</html>
+<?php
+  include_once('template/footer.php');
+?>
