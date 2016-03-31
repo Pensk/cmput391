@@ -31,7 +31,7 @@
     <input class="form-control" type="date" name="enddate" placeholder="Enddate yyyy/mm/dd">
   </div>
   <div class="form-group">
-    <input class="form-control" type="submit" name="submit">
+    <input class="form-control" type="submit" name="Search">
   </div>
   </form>
   <hr />
