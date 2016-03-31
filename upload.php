@@ -26,7 +26,7 @@ Upload (Max 64KB): <input class="form-control" name="image[]" webkitdirectory di
 <input class="form-control" type="radio" name="permitted" value="true" />Public
 <input class="form-control" type="radio" name="permitted" value="group"/>Or Group ID: <input class="form-control" type="text" name="group" placeholder="group ID" /><br />
 </div>
-<div class="form-group"<
+<div class="form-group">
 <input class="form-control" type="text" name="description" placeholder="Description" /><br />
 <input class="form-control" type="text" name="location" placeholder="Location" /><br />
 <input class="form-control" type="date" name="time" placeholder="Date (Y-M-D)" /><br />

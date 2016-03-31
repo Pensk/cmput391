@@ -23,11 +23,35 @@ Class Display {
   }
 
   //return an array of all the images in the database
-  public function displayImages(){
-    $sql = "SELECT * FROM images";
+  public function canView($user,$imgid){
+
+    //admin can view all images
+    if($user == "admin"){
+      return true;
+    }
+
+    $sql = "SELECT * from images where images.photo_id = :imgid";
     $stmt = $this->db->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll();
+    $stmt->execute(["imgid"=>$imgid]);
+    $data = $stmt->fetch();
+
+    //The owner of the image can always see it (private or otherwise)
+    if($data["owner_name"] == $user){
+      return true;
+    }
+
+    //public images may be viewed by anyone
+    if($data["permitted"] == 1){
+      return true;
+    }
+
+    //Select the row if the user is in the group the image belongs to
+    $sql = "SELECT COUNT(*) as count FROM images join groups on permitted = groups.group_id join group_lists on group_lists.group_id = groups.group_id where friend_id = :user and photo_id = :imgid";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute(["user"=>$user, "imgid"=>$imgid]);
+    //return whether or not that row exists
+    return $stmt->fetch()["count"] > 0;
+
   }
 
   public function getImageFromId($imgid){
