@@ -31,12 +31,13 @@
   </form>
   <hr />
   <div class="row">
-  <?= foreach($result as $img):  ?>
+  <?php foreach($result as $img):  ?>
   <div class="col-md-4 text-center">
   <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="img-responsive" /><br />
   <h4><strong><?= $img["description"] ?></strong></h4> - <?= $img["owner_name"] ?>
   </div>
-</div>
+<?php endforeach; ?>
+  </div>
 </div>
   </body>
 <?php
