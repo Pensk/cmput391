@@ -5,14 +5,14 @@
     header('Location: login.php');
   }
 
-  if(isset($_POST["submit"])){
+  if(isset($_GET["submit"])){
     include_once('module/module.search.php');
     $search = new Search;
-    $searchtext = $_POST["searchtext"];
+    $searchtext = $_GET["searchtext"];
     $thelist = explode(' ',$searchtext);
     $keys = count($thelist);
-    $tps = $_POST["startdate"];
-    $tpe = $_POST["enddate"];
+    $tps = $_GET["startdate"];
+    $tpe = $_GET["enddate"];
     $result = $search->search($thelist,$keys,$tps,$tpe);
     // link to display
   }
@@ -24,7 +24,7 @@
 <body>
   <div class="container">
     <h2>Image Search</h2>
-<form method="POST" clas="form">
+<form method="GET" clas="form">
   <div class="form-group">
     <input class="form-control" type="text" name="searchtext" placeholder="Searchtext"><br />
     <input class="form-control" type="date" name="startdate" placeholder="Startdate yyyy/mm/dd"><br />
