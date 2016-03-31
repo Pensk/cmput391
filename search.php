@@ -23,6 +23,7 @@
 ?>
 <body>
   <div class="container">
+    <h2>Image Search</h2>
 <form method="POST" clas="form">
   <div class="form-group">
     <input class="form-control" type="text" name="searchtext" placeholder="Searchtext"><br />
@@ -45,7 +46,7 @@
   <h4><strong><?= $img["description"] ?></strong></h4> - <?= $img["owner_name"] ?>
   </div>
 <?php
-    endforeach; 
+    endforeach;
   endif;
   ?>
   </div>
