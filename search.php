@@ -23,11 +23,15 @@
 ?>
 <body>
   <div class="container">
-<form method="POST">
-    <input type="text" name="searchtext" placeholder="Searchtext"><br />
-    <input type="date" name="startdate" placeholder="Startdate yyyy/mm/dd"><br />
-    <input type="date" name="enddate" placeholder="Enddate yyyy/mm/dd">
-    <input type="submit" name="submit">
+<form method="POST" clas="form">
+  <div class="form-group">
+    <input class="form-control" type="text" name="searchtext" placeholder="Searchtext"><br />
+    <input class="form-control" type="date" name="startdate" placeholder="Startdate yyyy/mm/dd"><br />
+    <input class="form-control" type="date" name="enddate" placeholder="Enddate yyyy/mm/dd">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="submit" name="submit">
+  </div>
   </form>
   <hr />
   <div class="row">
