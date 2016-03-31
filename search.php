@@ -28,7 +28,7 @@
     <input type="date" name="enddate" placeholder="Enddate yyyy/mm/dd">
     <input type="submit" name="submit">
   </form>
-  <?= var_dump($result) ?>
+  <?php if(isset($result)) echo var_dump($result); ?>
   </body>
 <?php
   include_once('template/footer.php');
