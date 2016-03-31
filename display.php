@@ -10,7 +10,8 @@
   $disp = new Display;
   $pageTitle = "Display Page";
 
-  $imgid = $_GET["id"];
+  if(isset($_GET["id"]))
+    $imgid = $_GET["id"];
   $user = $_SESSION["user"];
 
 ?>
@@ -24,12 +25,14 @@ include_once('template/header.php');
 <h2>Display Image</h2>
 <br />
 <?php
-  if(!$disp->canView($user,$imgid)):
+  if(!isset($_GET["id"])):
+    echo "<h3>Error - No Image ID Provided</h3>";
+  elseif(!$disp->canView($user,$imgid)):
     echo "<h3>You don't have permission to view this image</h3>";
   else:
 ?>
     <img src="server/image.php?id=<?= $imgid ?>" class="img-resonsive" /><br />
-    
+
 <?php
   endif;
 ?>
