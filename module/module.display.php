@@ -95,7 +95,7 @@ Class Display {
   }
 
   public function mostPopular(){
-    $sql = "SELECT *, COUNT(*) as count FROM views join images on images.photo_id = views.photo_id GROUP BY photo_id ORDER BY count DESC";
+    $sql = "SELECT *, COUNT(*) as count FROM views join images on images.photo_id = views.photo_id GROUP BY views.photo_id ORDER BY count DESC";
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();
