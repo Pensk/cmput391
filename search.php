@@ -6,8 +6,13 @@
   }
 
   if(isset($_GET["submit"])){
+    //to search the images
     include_once('module/module.search.php');
     $search = new Search;
+    //to check permissions
+    include_once('module/module.display.php');
+    $disp = new Display;
+
     $searchtext = $_GET["searchtext"];
     $thelist = explode(' ',$searchtext);
     $keys = count($thelist);
@@ -39,6 +44,7 @@
   if(isset($result)):
     $c = 0;
     foreach($result as $img):
+      if($disp->canView($user,$img["photo_id"])):
       if($c % 3 == 0)
         echo "</div>\n<div class='clearfix'></div><br />\n<div class='row'>";
   ?>
@@ -48,6 +54,7 @@
   </div>
 <?php
       $c += 1;
+      endif;
     endforeach;
   endif;
   ?>
