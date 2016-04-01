@@ -52,6 +52,8 @@
     <input class="form-control" type="submit" name="submit" value="Search">
   </div>
   </form>
+  <?= $_GET["keyword"] ?>
+  <?= $_GET["date"] ?>
   <hr />
   <div class="row">
   <?php
