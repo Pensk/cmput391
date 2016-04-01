@@ -47,7 +47,28 @@ foreach($disp->mostPopular() as $img):
     break;
 endforeach;
 ?>
+</div><br />
+
+<h3>My Uploaded Images</h3>
+<div class="row">
+<?php
+$c = 0;
+foreach($disp->ownsImages($user) as $img):
+    if($c % 5 == 0)
+      echo "</div>\n<div class='clearfix'></div><br />\n<div class='row'>";
+?>
+  <div class="col-md-2 text-center">
+    <a href="display.php?id=<?= $img["photo_id"] ?>">
+      <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="center-block" width="100" height="100"/><br />
+      <h4><strong><?= $img["description"] ?></strong></h4>
+    </a>
+  </div>
+<?php
+    $c += 1;
+endforeach;
+?>
 </div>
+
 </div>
 <?php
 include_once('template/footer.php');

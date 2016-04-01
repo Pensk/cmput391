@@ -100,6 +100,13 @@ Class Display {
     $stmt->execute(["user"=>$user,"img"=>$imgid]);
   }
 
+  public function ownsImages($user){
+    $sql = "SELECT * FROM images WHERE owner_name = :user";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute(["user"=>$user]);
+    return $stmt->fetchAll();
+  }
+
   public function mostPopular(){
     $sql = "SELECT images.photo_id, owner_name, description, COUNT(*) as count FROM views join images on images.photo_id = views.photo_id GROUP BY views.photo_id ORDER BY count DESC";
     $stmt = $this->db->prepare($sql);
