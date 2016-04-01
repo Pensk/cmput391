@@ -64,6 +64,7 @@ Class Display {
     return $data["owner_name"] == $user;
   }
 
+  //Return the image BLOB from an id
   public function getImageFromId($imgid) {
     $sql = "SELECT photo FROM images WHERE photo_id = :imgid";
     $stmt = $this->db->pdo->prepare($sql);
@@ -71,6 +72,7 @@ Class Display {
     return $stmt->fetch()["photo"];
   }
 
+  //Return all information about an image by id
   public function getImageInfo($imgid) {
     $sql = "SELECT * FROM images WHERE photo_id = :imgid";
     $stmt = $this->db->pdo->prepare($sql);
@@ -78,24 +80,28 @@ Class Display {
     return $stmt->fetch();
   }
 
+  //Update an image's security/information
   public function updateImage($imgid,$descr,$loc,$time,$subj,$permitted) {
     $sql = "UPDATE images SET description = :descr, place = :loc, timing = :timing, subject = :subj, permitted = :permitted WHERE photo_id = :imgid";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->execute(["descr"=>$descr,"loc"=>$loc,"timing"=>$time,"subj"=>$subj,"imgid"=>$imgid,"permitted"=>$permitted]);
   }
 
+  //delete an image from the database
   public function deleteImage($imgid) {
     $sql = "DELETE FROM images WHERE photo_id = :imgid";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->execute(["imgid"=>$imgid]);
   }
 
+  //Insert a row into the views table, representing a unique view of an image
   public function userViewed($user,$imgid){
     $sql = "INSERT INTO views (user_name, photo_id) VALUES (:user, :img)";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->execute(["user"=>$user,"img"=>$imgid]);
   }
 
+  //return images a user owns
   public function ownsImages($user){
     $sql = "SELECT * FROM images WHERE owner_name = :user";
     $stmt = $this->db->pdo->prepare($sql);
@@ -103,17 +109,12 @@ Class Display {
     return $stmt->fetchAll();
   }
 
+  //Return images ordered by how many views they have
   public function mostPopular(){
     $sql = "SELECT images.photo_id, owner_name, description, COUNT(*) as count FROM views join images on images.photo_id = views.photo_id GROUP BY views.photo_id ORDER BY count DESC";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();
-    /*
-    $sql = "SELECT * from images where photo_id = :p1 or photo_id = :p2 photo_id = :p3 or photo_id = :p4 or photo_id = :p5";
-    $stmt = $this->db->pdo->prepare($sql);
-    $stmt->execute(["p1"=>$data[0][photo_id],"p2"=>$data[1][photo_id],"p3"=>$data[2][photo_id],"p4"=>$data[3][photo_id],"p5"=>$data[4][photo_id]]);
-    return $stmt->fetchAll();
-    */
   }
 
 }
