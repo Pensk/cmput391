@@ -19,9 +19,9 @@ Class Search {
         $this->db = new PDO($dsn, DB_USER, DB_PASS, $opt);
     }
   }
-  function search($keyword,$date,$keywords,$startdate,$enddate){
 
-    
+  public function search($keyword,$date,$keywords,$startdate,$enddate){
+    $sql = "SELECT";
 
     //Test for now - let's start by returning all images in the database
     $sql = "SELECT * FROM images";
