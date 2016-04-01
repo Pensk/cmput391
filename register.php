@@ -28,7 +28,7 @@
 <?php
 include_once('template/header.php');
 ?>
-<body>
+<div class="container">
 <h2>Register page</h2>
 <br />
 <form method="POST">
@@ -41,7 +41,7 @@ include_once('template/header.php');
   <input type="text" name="phone" placeholder="Phone Number"><br />
   <input type="submit" name="submit">
 </form>
-</body>
+</div>
 <?php
 include_once('template/footer.php');
 ?>

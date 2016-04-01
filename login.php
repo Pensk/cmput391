@@ -27,8 +27,7 @@
 <?php
 include_once('template/header.php');
 ?>
-
-<body>
+<div class="container">
 <h2>Login page</h2>
 <br />
 <?php
@@ -49,7 +48,7 @@ include_once('template/header.php');
   <a href="register.php"><h3>Register</h3></a>
 
 <?php endif; ?>
-</body>
+</div>
 <?php
 include_once('template/footer.php');
 ?>

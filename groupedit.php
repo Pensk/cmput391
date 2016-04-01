@@ -13,7 +13,7 @@
   $pageTitle = "Edit Group";
   include_once('template/header.php');
 ?>
-<body>
+
   <div class="container">
     <?php
       if(!$group->isOwner($user,$groupid)):
@@ -23,12 +23,12 @@
       else:
     ?>
     <h2>Edit Group</h2>
-    
+
     <?php
       endif;
     ?>
   </div>
-</body>
+
 <?php
   include_once('template/footer.php');
 ?>

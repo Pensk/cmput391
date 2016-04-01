@@ -12,7 +12,7 @@
   $pageTitle = "Groups";
   include_once('template/header.php');
 ?>
-<body>
+
   <div class="container">
     <h2>Group Page</h2>
     <div class="row">
@@ -38,7 +38,7 @@
       </div>
     </div>
   </div>
-</body>
+
 <?php
   include_once('template/footer.php');
 ?>

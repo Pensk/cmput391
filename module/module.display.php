@@ -30,7 +30,7 @@ Class Display {
       return true;
     }
 
-    $sql = "SELECT * from images where images.photo_id = :imgid";
+    $sql = "SELECT owner_name, permitted from images where images.photo_id = :imgid";
     $stmt = $this->db->prepare($sql);
     $stmt->execute(["imgid"=>$imgid]);
     $data = $stmt->fetch();

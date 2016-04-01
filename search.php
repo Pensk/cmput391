@@ -21,7 +21,6 @@
 
   include_once('template/header.php');
 ?>
-<body>
   <div class="container">
     <h2>Image Search</h2>
 <form method="GET" clas="form">
@@ -51,7 +50,6 @@
   ?>
   </div>
 </div>
-  </body>
 <?php
   include_once('template/footer.php');
 ?>

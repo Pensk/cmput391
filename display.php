@@ -20,8 +20,7 @@
 include_once('template/header.php');
 ?>
 
-<body>
-  <div class="container">
+<div class="container">
 <h2>Display Image</h2>
 <br />
 <?php
@@ -37,7 +36,6 @@ include_once('template/header.php');
   endif;
 ?>
 </div>
-</body>
 
 <?php
 include_once('template/footer.php');

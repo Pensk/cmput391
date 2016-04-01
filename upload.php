@@ -11,7 +11,6 @@
 <?php
 include_once('template/header.php');
 ?>
-<body>
 <div class="container">
 <h3>Upload Page</h3>
 
@@ -35,7 +34,6 @@ Upload (Max 64KB): <input class="form-control" name="image[]" webkitdirectory di
 </div>
 </form>
 </div>
-</body>
 <?php
 include_once('template/footer.php');
 ?>

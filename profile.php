@@ -15,16 +15,14 @@
 <?php
 include_once('template/header.php');
 ?>
-
-<body>
+<div class="container">
 <h2>Profile Page - <?= $_SESSION["user"] ?></h2>
 <br />
 <a href="group.php"><h4>Groups</h4></a>
 <a href="upload.php"><h4>Upload an Image</h4></a>
 <a href="search.php"><h4>Search for Images</h4></a>
 <br />
-</body>
-
+</div>
 <?php
 include_once('template/footer.php');
 ?>
