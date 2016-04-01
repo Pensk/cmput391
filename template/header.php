@@ -16,6 +16,7 @@
         <li><a href="group.php">Groups</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="docs.php">Help</a></li>
         <?php if(isset($_SESSION["user"])): ?>
         <li><a href="logout.php">Logout</a></li>
         <?php else: ?>
