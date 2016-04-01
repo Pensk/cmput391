@@ -5,6 +5,8 @@
     header("Location: login.php");
   }
 
+  $user = $_SESSION["user"];
+
   //Include the display module for showing images
   include_once('module/module.display.php');
   $disp = new Display;
