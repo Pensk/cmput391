@@ -54,5 +54,21 @@
       $stmt->execute(["user"=>$user,"name"=>$name]);
     }
 
+    //Return information on a group from its ID
+    public function getInfo($groupid){
+      $sql = "SELECT * FROM groups where group_id = :groupid";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["groupid"=>$groupid]);
+      return $stmt->fetch();
+    }
+
+    //Return the members of a group
+    public function getMembers($groupid){
+      $sql = "SELECT friend_id FROM group_lists where group_id = :groupid";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["groupid"=>$groupid]);
+      return $stmt->fetchAll();
+    }
+
   }
 ?>
