@@ -37,7 +37,7 @@
   <div class="row">
   <?php
   if(isset($result)):
-    $c = 1;
+    $c = 0;
     foreach($result as $img):
       if($c % 3 == 0)
         echo "</div>\n<div class='clearfix'></div>\n<div class='row'>";
