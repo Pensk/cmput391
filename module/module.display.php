@@ -94,5 +94,9 @@ Class Display {
     $stmt->execute(["user"=>$user,"img"=>$imgid]);
   }
 
+  public function mostPopular(){
+    $sql = "SELECT ";
+  }
+
 }
 ?>
