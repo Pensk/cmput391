@@ -13,6 +13,7 @@
         <li><a href="profile.php">Profile</a></li>
         <li><a href="upload.php">Upload</a></li>
         <li><a href="search.php">Search</a></li>
+        <li><a href="group.php">Groups</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if(isset($_SESSION["user"])): ?>
