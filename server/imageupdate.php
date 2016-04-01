@@ -15,7 +15,5 @@
     $img = $disp->updateImage($imgid,$descr,$loc,$time,$subj);
   }
 
-  header('Content-type: image/jpeg');
-
-  echo $img;
+  header('Location: ../display.php?id='.$imgid);
 ?>
