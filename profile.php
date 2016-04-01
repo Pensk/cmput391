@@ -21,14 +21,8 @@ include_once('template/header.php');
 <br />
 <a href="group.php"><h4>Groups</h4></a>
 <a href="upload.php"><h4>Upload an Image</h4></a>
+<a href="search.php"><h4>Search for Images</h4></a>
 <br />
-<?php
-  foreach($disp->displayImages() as $img):
-    //stackoverflow.com/questions/13214602/how-to-display-an-blob-image-stored-in-mysql-database
-    echo $img["description"].': <img src="server/image.php?id='.$img["photo_id"].'" width="244" height="244" /> '.$img["owner_name"].'<br />';
-
-  endforeach;
-?>
 </body>
 
 <?php
