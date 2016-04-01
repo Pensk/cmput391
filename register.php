@@ -31,15 +31,19 @@ include_once('template/header.php');
 <div class="container">
 <h2>Register page</h2>
 <br />
-<form method="POST">
-  <input type="text" name="username" placeholder="Username"><br />
-  <input type="password" name="password" placeholder="Password"><br />
-  <input type="text" name="firstname" placeholder="First Name"><br />
-  <input type="text" name="lastname" placeholder="Last Name"><br />
-  <input type="text" name="address" placeholder="Address"><br />
-  <input type="text" name="email" placeholder="Email"><br />
-  <input type="text" name="phone" placeholder="Phone Number"><br />
-  <input type="submit" name="submit">
+<form method="POST" class="form">
+  <div class="form-group">
+  <input class="form-control" type="text" name="username" placeholder="Username"><br />
+  <input class="form-control" type="password" name="password" placeholder="Password"><br />
+  <input class="form-control" type="text" name="firstname" placeholder="First Name"><br />
+  <input class="form-control" type="text" name="lastname" placeholder="Last Name"><br />
+  <input class="form-control" type="text" name="address" placeholder="Address"><br />
+  <input class="form-control" type="text" name="email" placeholder="Email"><br />
+  <input class="form-control" type="text" name="phone" placeholder="Phone Number"><br />
+  </div>
+  <div class="form-group">
+  <input class="form-control" type="submit" name="submit">
+  </div>
 </form>
 </div>
 <?php
