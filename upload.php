@@ -23,19 +23,19 @@ Upload (Max 64KB): <input class="form-control" name="image[]" webkitdirectory di
 <div class="form-group">
   <div class="radio">
     <label>
-      <input class="form-control" type="radio" name="permitted" value="false" checked />
+      <input type="radio" name="permitted" value="false" checked />
       Private
     </label>
   </div>
   <div class="radio">
     <label>
-      <input class="form-control" type="radio" name="permitted" value="true" />
+      <input type="radio" name="permitted" value="true" />
       Public
     </label>
   </div>
   <div class="radio">
     <label>
-      <input class="form-control" type="radio" name="permitted" value="group"/>
+      <input type="radio" name="permitted" value="group"/>
       Or Group ID:
     </label>
   </div>
