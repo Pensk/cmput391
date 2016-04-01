@@ -40,10 +40,14 @@ include_once('template/header.php');
 
 <?php else: ?>
 
-  <form method="POST">
-    <input type="text" name="username" placeholder="Username"><br />
-    <input type="password" name="password" placeholder="Password"><br />
-    <input type="submit" name="submit">
+  <form method="POST" class="form">
+    <div class="form-group">
+    <input class="form-control" type="text" name="username" placeholder="Username"><br />
+    <input class="form-control" type="password" name="password" placeholder="Password"><br />
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="submit" name="submit">
+  </div>
   </form>
   <a href="register.php"><h3>Register</h3></a>
 
