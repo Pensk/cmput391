@@ -27,7 +27,7 @@ include_once('template/header.php');
   <div class="col-md-1"></div>
 <?php
 $c = 0;
-foreach($result as $img):
+foreach($disp->mostPopular() as $img):
   if($disp->canView($user,$img["photo_id"])):
 ?>
 <div class="col-md-2 text-center">
