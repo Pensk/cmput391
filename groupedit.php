@@ -38,7 +38,7 @@
     <ul class="list-group">
       <?php
         foreach($group->getMembers($groupid) as $member){
-          echo "<li class='list-group-item'>".$member['friend_id']."<span class='badge'><a href='server/groupdeleteuser.php?id=".$member['friend_id']."&groupid=".$groupid."'>Delete</a></span></li>";
+          echo "<li class='list-group-item'>".$member['friend_id']."<span class='badge' style='color: red; text-decoration: none;'><a href='server/groupdeleteuser.php?id=".$member['friend_id']."&groupid=".$groupid."'>Delete</a></span></li>";
         }
       ?>
     </ul>
