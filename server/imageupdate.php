@@ -12,7 +12,8 @@
     $loc = $_POST["place"];
     $time = date('Y-m-d',strtotime($_POST["timing"]));
     $subj = $_POST["subject"];
-    $img = $disp->updateImage($imgid,$descr,$loc,$time,$subj);
+    $permitted = $_POST["group"];
+    $img = $disp->updateImage($imgid,$descr,$loc,$time,$subj,$permitted);
   }
 
   header('Location: ../display.php?id='.$imgid);

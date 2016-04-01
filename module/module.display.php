@@ -82,10 +82,10 @@ Class Display {
     return $stmt->fetch();
   }
 
-  public function updateImage($imgid,$descr,$loc,$time,$subj) {
-    $sql = "UPDATE images SET description = :descr, place = :loc, timing = :timing, subject = :subj WHERE photo_id = :imgid";
+  public function updateImage($imgid,$descr,$loc,$time,$subj,$permitted) {
+    $sql = "UPDATE images SET description = :descr, place = :loc, timing = :timing, subject = :subj, permitted = :permitted WHERE photo_id = :imgid";
     $stmt = $this->db->prepare($sql);
-    $stmt->execute(["descr"=>$descr,"loc"=>$loc,"timing"=>$time,"subj"=>$subj,"imgid"=>$imgid]);
+    $stmt->execute(["descr"=>$descr,"loc"=>$loc,"timing"=>$time,"subj"=>$subj,"imgid"=>$imgid,"permitted"=>$permitted]);
   }
 
 }
