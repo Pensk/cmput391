@@ -51,6 +51,12 @@
       $sql = "INSERT INTO groups (user_name, group_name, date_created) VALUES (:user, :name, now())";
       $stmt = $this->db->prepare($sql);
       $stmt->execute(["user"=>$user,"name"=>$name]);
+      $groupid = $stmt->lastInsertId();
+
+      //Make the owner part of the group as well
+      $sql = "INSERT INTO group_lists (group_id, friend_id) VALUES (:groupid, :user)"
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["user"=>$user,"groupid"=>$groupid]);
     }
 
     //Return information on a group from its ID
