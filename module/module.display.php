@@ -88,5 +88,11 @@ Class Display {
     $stmt->execute(["descr"=>$descr,"loc"=>$loc,"timing"=>$time,"subj"=>$subj,"imgid"=>$imgid,"permitted"=>$permitted]);
   }
 
+  public function userViewed($user,$imgid){
+    $sql = "INSERT INTO views (user_name, photo_id) VALUES (:user, :img)";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute(["user"=>$user,"img"=>$imgid]);
+  }
+
 }
 ?>

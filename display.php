@@ -10,8 +10,9 @@
   $disp = new Display;
   $pageTitle = "Display Page";
 
-  if(isset($_GET["id"]))
+  if(isset($_GET["id"])) {
     $imgid = $_GET["id"];
+  }
   $user = $_SESSION["user"];
 
 ?>
@@ -64,6 +65,9 @@ include_once('template/header.php');
     </form>
 <?php
     endif;
+    //add a view count for this image
+    $disp->userViewed($user,$imgid);
+
   endif;
 ?>
 </div>
