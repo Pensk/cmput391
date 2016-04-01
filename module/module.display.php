@@ -95,14 +95,16 @@ Class Display {
   }
 
   public function mostPopular(){
-    $sql = "SELECT photo_id, COUNT(*) as count FROM views GROUP BY photo_id ORDER BY count DESC limit 5";
+    $sql = "SELECT *, COUNT(*) as count FROM views join images on images.photo_id = views.photo_id GROUP BY photo_id ORDER BY count DESC";
     $stmt = $this->db->prepare($sql);
     $stmt->execute();
-    $data = $stmt->fetchAll();
+    return $stmt->fetchAll();
+    /*
     $sql = "SELECT * from images where photo_id = :p1 or photo_id = :p2 photo_id = :p3 or photo_id = :p4 or photo_id = :p5";
     $stmt = $this->db->prepare($sql);
     $stmt->execute(["p1"=>$data[0][photo_id],"p2"=>$data[1][photo_id],"p3"=>$data[2][photo_id],"p4"=>$data[3][photo_id],"p5"=>$data[4][photo_id]]);
     return $stmt->fetchAll();
+    */
   }
 
 }
