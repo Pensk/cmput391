@@ -61,10 +61,14 @@ Class Search {
     }
     if($keys==0 and $startdate=="" and $enddate==""){
       $sql="select * from images";
-      //execute
+      $stmt = $this->db->pdo->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll();
     }else{
       $sql="select * from images where".$templist.$tempstartdate.$tempenddate;
-      //execute
+      $stmt = $this->db->pdo->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll();
     }
     */
   }
