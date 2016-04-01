@@ -40,8 +40,8 @@
       ?>
     </ul>
     <br />
-    <form class="form">
-      <div class="form-group" method="POST" action="server/groupadduser.php">
+    <form class="form" method="POST" action="server/groupadduser.php">
+      <div class="form-group">
         <input class="form-control" type="hidden" value="<?= $groupinfo["group_id"] ?>" name="groupid" />
         <input class="form-control" type="text" name="username" placeholder="User Name" />
         <input class="form-control" type="submit" name="submit" value="Add User" />
