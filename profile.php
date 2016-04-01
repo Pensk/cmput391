@@ -26,7 +26,6 @@ include_once('template/header.php');
 <br />
 <h3>Most Popular Images</h3><br />
 <div class="row">
-  <div class="col-md-1"></div>
 <?php
 
 $c = 0;
