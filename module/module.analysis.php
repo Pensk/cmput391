@@ -1,6 +1,6 @@
 <?php
 //search module
-include_once('constants.php');
+include_once('module.database.php');
 
 Class Analysis {
 
@@ -12,11 +12,7 @@ Class Analysis {
     {
         $this->db = $db;
     } else {
-        $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME.';charset=UTF8';
-        $opt = array(
-          PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        );
-        $this->db = new PDO($dsn, DB_USER, DB_PASS, $opt);
+        $this->db = new Database;
     }
   }
 }
