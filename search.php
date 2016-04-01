@@ -40,7 +40,7 @@
     $c = 1;
     foreach($result as $img):
       if($c % 3 == 0)
-        echo "</div>\n<div class='row'>";
+        echo "</div>\n<div class='clearfix' />\n<div class='row'>";
   ?>
   <div class="col-md-6 text-center">
   <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="center-block" width="100" height="100"/><br />
