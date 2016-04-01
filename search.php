@@ -33,18 +33,18 @@
 <form method="GET" clas="form">
   <div class="form-group">
     <input class="form-control" type="text" name="searchtext" placeholder="Keywords (separate by space)"><br />
-    <input class="form-control" type="date" name="startdate" placeholder="Startdate yyyy/mm/dd"><br />
-    <input class="form-control" type="date" name="enddate" placeholder="Enddate yyyy/mm/dd">
+    <input class="form-control" type="date" name="startdate" placeholder="Start Date Y-M-D"><br />
+    <input class="form-control" type="date" name="enddate" placeholder="End Date Y-M-D">
   </div>
   <div class="form-group">
     <div class="checkbox">
     <label>
-      <input type="checkbox"> Keyword
+      <input type="checkbox"> Search by Keyword
     </label>
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox"> Date
+      <input type="checkbox"> Search by Date
     </label>
   </div>
   </div>
