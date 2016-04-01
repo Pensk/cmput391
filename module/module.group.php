@@ -79,7 +79,7 @@
 
     //Delete a group
     public function deleteGroup($groupid) {
-      $sql = "DELTE FROM groups where group_id = :groupid";
+      $sql = "DELETE FROM groups where group_id = :groupid";
       $stmt = $this->db->prepare($sql);
       $stmt->execute(["groupid"=>$groupid]);
     }
