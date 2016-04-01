@@ -9,9 +9,9 @@ Documentation:
 
 <p>Client side: Any modern browser will do.</p>
 
-<p>Server side:PHP5 required. Server installation:&lt;copy files in …to….EDIT&gt; </p>
+<p>Server side:PHP5 required. Server installation: Edit /module/constants.php with the Database constants required to connect.</p>
 
-<p>Database side: Any database server.</p>
+<p>Database side: Implemented with PDO using MySql.</p>
 
 <p>User manual:</p>
 
