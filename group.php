@@ -15,23 +15,24 @@
 
   <div class="container">
     <h2>Group Page</h2>
+    <br />
     <div class="row">
       <div class="col-md-6">
-        <p>You own these groups:</p>
-        <ul>
+        <h4>You own these groups: (click to edit)</h4>
+        <div class="list-group">
           <?php
             foreach($group->groupsOwned($user) as $g){
-              echo "<li><a href='groupedit.php?id=".$g["group_id"]."'>".$g["group_id"].": ".$g["group_name"]." - created: ".$g["date_created"]."</a></li>";
+              echo "<a href='groupedit.php?id=".$g["group_id"]."' class='list-group-item'>".$g["group_id"].": <strong>".$g["group_name"]."</strong> - created: ".$g["date_created"]."</a>";
             }
           ?>
-        </ul>
+        </div>
       </div>
       <div class="col-md-6">
-        <p>You belong to these groups:</p>
-        <ul>
+        <h4>You belong to these groups:</h4>
+        <ul class="list-group">
           <?php
             foreach($group->groupsIn($user) as $g){
-              echo "<li>".$g["group_id"].": ".$g["group_name"]." - created: ".$g["date_created"]."</li>";
+              echo "<li class='list=group-item'>".$g["group_id"].": <strong>".$g["group_name"]."</strong> - created: ".$g["date_created"]."</li>";
             }
           ?>
         </ul>
