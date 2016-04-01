@@ -2,7 +2,7 @@
 //search module
 include_once('constants.php');
 
-Class Search {
+Class Analysis {
 
   //Holds the database object for interacting with the DB
   private $db;
