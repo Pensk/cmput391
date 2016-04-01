@@ -47,5 +47,12 @@
       return $stmt->fetch()["user"] == $user;
     }
 
+    //Create a new group
+    public function createGroup($user,$name){
+      $sql = "INSERT INTO groups (user_name, group_name, date_created) VALUES (:user, :name, now())";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["user"=>$$user,"name"=>$name]);
+    }
+
   }
 ?>
