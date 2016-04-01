@@ -34,20 +34,26 @@
   </div>
   </form>
   <hr />
-  <div class="row">
+  <table class="table">
   <?php
   if(isset($result)):
+    $c = 1;
     foreach($result as $img):
+      if($c % 3 == 0)
+        echo "<tr>";
   ?>
-  <div class="col-md-4 text-center">
-  <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="img-responsive center-block" width="100" height="100"/><br />
+  <td>
+  <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="center-block" width="100" height="100"/><br />
   <h4><strong><?= $img["description"] ?></strong></h4><br /><?= $img["owner_name"] ?>
-  </div>
+  </td>
 <?php
+      if($c % 3 == 0)
+        echo "<tr>";
+      $c += 1;
     endforeach;
   endif;
   ?>
-  </div>
+  </table>
 </div>
 <?php
   include_once('template/footer.php');
