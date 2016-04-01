@@ -22,38 +22,24 @@ Class User {
 
   //Register a new user with form data from register.php
   public function register($username,$password,$firstname,$lastname,$address,$email,$phone){
-    /*
+
     $sql = "INSERT INTO users (user_name, password, date_registered) VALUES (:username, :password, now())";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->execute(["username"=>$username,"password"=>$password]);
-    */
 
-    $sql = "INSERT INTO users (user_name, password, date_registered) VALUES ($username, $password, now())";
-    $stmt = oci_parse($this->db->conn,$sql);
-    oci_execute($stmt);
-    /*
     $sql = "INSERT INTO persons (user_name, first_name, last_name, address, email, phone) VALUES (:username, :firstname, :lastname, :address, :email, :phone)";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->execute(["username"=>$username,"firstname"=>$firstname,"lastname"=>$lastname,"address"=>$address,"email"=>$email,"phone"=>$phone]);
-    */
-    $sql = "INSERT INTO persons (user_name, first_name, last_name, address, email, phone) VALUES ($username, $firstname, $lastname, $address, $email, $phone)";
-    $stmt = oci_parse($this->db->conn,$sql);
-    oci_execute($stmt);
 
   }
 
   //Check a users login data from login.php with the data stored in the Database
   //return true if the user's data matches
   public function login($name, $pass){
-    /*
     $sql = "SELECT password FROM users WHERE user_name = :user";
     $stmt = $this->db->pdo->prepare($sql);
     $stmt->execute(["user"=>$name]);
     return $stmt->fetch()["password"] == $pass;
-    */
-    $sql = "SELECT password FROM users WHERE user_name = $name";
-    $stmt = oci_parse($this->db->conn,$sql);
-    return oci_fetch_array($stmt, OCI_ASSOC)["password"] == $pass;
   }
 
 }
