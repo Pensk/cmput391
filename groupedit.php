@@ -26,6 +26,7 @@
     <h2>Edit Group</h2><br />
     <h4>Name</h4>
     <form class="form" action="server/groupname.php" method="POST">
+      <input type="hidden" value="<?= $groupinfo["group_id"] ?>" name="groupid" />
       <input type="text" value="<?= $groupinfo["group_name"] ?>" name="groupname" />
       <input type="submit" name="submit" value="Update Name" />
     </form>

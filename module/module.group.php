@@ -70,5 +70,12 @@
       return $stmt->fetchAll();
     }
 
+    //Set the name of a group using the id
+    public function setName($groupid, $groupname) {
+      $sql = "UPDATE groups SET group_name = :groupname where group_id = :groupid";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["groupname"=>$groupname,"groupid"=>$groupid]);
+    }
+
   }
 ?>
