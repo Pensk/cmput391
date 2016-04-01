@@ -17,13 +17,23 @@ Class Search {
   }
 
   public function search($keyword,$date,$keywords,$startdate,$enddate){
-    $sql = "SELECT";
+    //Search by Keyword & Date
+    if($date){
+      $sql = "SELECT * FROM images where timing > :startdate AND timing < :enddate";
+      $stmt = $this->db->pdo->prepare($sql);
+      $stmt->execute(["startdate"=>$startdate,"enddate"=>$enddate]);
+      return $stmt->fetchAll();
+
+    //Search by only Keyword
+    } else {
+      $sql = "SELECT * FROM images";
+      $stmt = $this->db->pdo->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll();
+    }
 
     //Test for now - let's start by returning all images in the database
-    $sql = "SELECT * FROM images";
-    $stmt = $this->db->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll();
+
 
     /*
     $templist="";$tempstartdate="";$tempenddate="";
