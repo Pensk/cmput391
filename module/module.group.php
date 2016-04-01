@@ -91,5 +91,12 @@
       $stmt->execute(["groupid"=>$groupid,"username"=>$username]);
     }
 
+    //Delete a user from a group
+    public function deleteUser($groupid,$userid){
+      $sql = "DELETE FROM group_lists WHERE friend_id = :userid and group_id = :groupid";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["groupid"=>$groupid,"userid"=>$userid]);
+    }
+
   }
 ?>

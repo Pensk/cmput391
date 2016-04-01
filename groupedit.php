@@ -32,10 +32,13 @@
       <input class="form-control" type="submit" name="submit" value="Update Name" />
       </div>
     </form>
+    <br />
+    <h4>Group Members</h4>
+    <br />
     <ul class="list-group">
       <?php
         foreach($group->getMembers($groupid) as $member){
-          echo "<li class='list-group-item'>".$member['friend_id']."<span class='badge'><a href='server/groupdeleteuser?id=".$member['friend_id']."'>X</a></span></li>";
+          echo "<li class='list-group-item'>".$member['friend_id']."<span class='badge'><a href='server/groupdeleteuser?id=".$member['friend_id']."&groupid=".$groupid."'>Delete</a></span></li>";
         }
       ?>
     </ul>
