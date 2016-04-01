@@ -40,23 +40,23 @@ Class Search {
     if($keys!=0){
       for($temp=0;$temp<$keys;$temp++){
         if($temp==0){
-          $templist=" (images.subject like ".$thelist[0]." or imgaes.place like ".$thelist[0]." or images.description like ".$thelist[0].")";
+          $templist=" (images.subject like :thelist[0] or imgaes.place like :thelist[0] or images.description like :thelist[0])";
         }
         else{
-          $templist=$templist." and (images.(namevalue) like ".$thelist[$temp]." or images.place like ".$thelist[$temp]." or images.description like ".$thelist[$temp].")";
+          $templist=$templist." and (images.(namevalue) like :thelist[$temp] or images.place like :thelist[$temp] or images.description like :thelist[$temp])";
         }
       }
     }
     if($startdate!=""){
-      $tempstartdate=" images.timing>".$startdate;
+      $tempstartdate=" images.timing>:startdate";
       if($keys!=0){
-        $tempstartdate=" and".$tempstartdate;
+        $tempstartdate=" and :tempstartdate";
       }
     }
     if($enddate!=""){
-      $tempenddate=" images.timing<".$enddate;
+      $tempenddate=" images.timing<:enddate";
       if($keys!=0){
-        $tempenddate=" and".$tempenddate;
+        $tempenddate=" and :tempenddate";
       }
     }
     if($keys==0 and $startdate=="" and $enddate==""){
