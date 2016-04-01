@@ -32,12 +32,22 @@ include_once('template/header.php');
     $imginfo = $disp->getImageInfo($imgid);
 ?>
     <img src="server/image.php?id=<?= $imgid ?>" class="img-responsive center-block" /><br />
-    <h4>Owner:</h4><p><?= $imginfo["owner_name"] ?></p><br />
-    <h4>Description:</h4><p><?= $imginfo["description"] ?></p><br />
-    <h4>Subject:</h4><p><?= $imginfo["subject"] ?></p><br />
-    <h4>Place:</h4><p><?= $imginfo["place"] ?></p><br />
-    <h4>Date:</h4><p><?= $imginfo["timing"] ?></p><br />
-
+    <table class="table">
+      <tr class="text-center">
+      <th>Owner</th>
+      <th>Description</th>
+      <th>Subject</th>
+      <th>Place</th>
+      <th>Date</th>
+      </tr>
+      <tr>
+        <td><?= $imginfo["owner_name"] ?></td>
+        <td><?= $imginfo["description"] ?></td>
+        <td><?= $imginfo["subject"] ?></td>
+        <td><?= $imginfo["place"] ?></td>
+        <td><?= $imginfo["timing"] ?></td>
+      </tr>
+    </table>
 <?php
   endif;
 ?>
