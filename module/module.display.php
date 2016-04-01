@@ -53,11 +53,18 @@ Class Display {
 
   }
 
-  public function getImageFromId($imgid){
+  public function getImageFromId($imgid) {
     $sql = "SELECT photo FROM images WHERE photo_id = :imgid";
     $stmt = $this->db->prepare($sql);
     $stmt->execute(["imgid"=>$imgid]);
     return $stmt->fetch()["photo"];
+  }
+
+  public function getImageInfo($imgid) {
+    $sql = "SELECT * FROM images WHERE photo_id = :imgid";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute(["imgid"=>$imgid]);
+    return $stmt->fetch();
   }
 
 }
