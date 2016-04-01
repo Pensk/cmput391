@@ -16,11 +16,19 @@
     $disp = new Display;
 
     $searchtext = $_GET["searchtext"];
-    $thelist = explode(' ',$searchtext);
-    $keys = count($thelist);
-    $tps = $_GET["startdate"];
-    $tpe = $_GET["enddate"];
-    $result = $search->search($thelist,$keys,$tps,$tpe);
+    $keywords = explode(' ',$searchtext);
+    $keyword = false;
+    $date = false;
+
+    $startdate = $_GET["startdate"];
+    $enddate = $_GET["enddate"];
+
+    if(isset($_GET["keyword"]))
+      $keyword = true;
+    if(isset($_GET["date"]))
+      $date = true;
+      
+    $result = $search->search($keyword,$date,$keywords,$startdate,$enddate);
     // link to display
   }
 
@@ -52,8 +60,6 @@
     <input class="form-control" type="submit" name="submit" value="Search">
   </div>
   </form>
-  <?= $_GET["keyword"] ?>
-  <?= $_GET["date"] ?>
   <hr />
   <div class="row">
   <?php
