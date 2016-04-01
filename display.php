@@ -54,7 +54,7 @@ include_once('template/header.php');
     <form class="form" action="server/imageupdate.php" method="POST">
       <div class="form-group">
         <input type="hidden" name="id" value="<?= $imginfo["photo_id"] ?>" />
-        Group ID:<input class="form-control" type="text" name="group" value="<?= $imginfo["description"] ?>" />
+        Group ID:<input class="form-control" type="text" name="group" value="<?= $imginfo["permitted"] ?>" />
         Description:<input class="form-control" type="text" name="description" value="<?= $imginfo["description"] ?>" />
         Subject:<input class="form-control" type="text" name="subject" value="<?= $imginfo["subject"] ?>" />
         Location:<input class="form-control" type="text" name="place" value="<?= $imginfo["place"] ?>" />
