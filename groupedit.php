@@ -10,10 +10,6 @@
   include_once('module/module.group.php');
   $group = new Group;
 
-  if(isset($_POST["submit"])){
-    $group->addUser($groupid,$_POST["username"]);
-  }
-
   $pageTitle = "Edit Group";
   include_once('template/header.php');
 ?>
@@ -45,7 +41,8 @@
     </ul>
     <br />
     <form class="form">
-      <div class="form-group" method="POST">
+      <div class="form-group" method="POST" action="server/groupadduser.php">
+        <input class="form-control" type="hidden" value="<?= $groupinfo["group_id"] ?>" name="groupid" />
         <input class="form-control" type="text" name="username" placeholder="User Name" />
         <input class="form-control" type="submit" name="submit" value="Add User" />
       </div>
