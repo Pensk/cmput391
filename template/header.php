@@ -14,5 +14,12 @@
         <li><a href="upload.php">Upload</a></li>
         <li><a href="search.php">Search</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <?php if(isset($_SESSION["user"])): ?>
+        <li><a href="logout.php">Logout</a></li>
+        <?php else: ?>
+        <li><a href="login.php">Login</a></li>
+        <?php endif; ?>
+      </ul>
     </div>
   </nav>
