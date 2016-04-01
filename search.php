@@ -39,7 +39,7 @@
   <div class="form-group">
     <div class="checkbox">
     <label>
-      <input type="checkbox" value="keyword"> Search by Keyword
+      <input type="checkbox" name="keyword"> Search by Keyword
     </label>
   </div>
   <div class="checkbox">
