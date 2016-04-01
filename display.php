@@ -48,7 +48,20 @@ include_once('template/header.php');
         <td><?= $imginfo["timing"] ?></td>
       </tr>
     </table>
+  <?php
+    if($disp->canEdit($user,$imgid)):
+  ?>
+    <form class="form" action="server/imageupdate.php" method="POST">
+      <div class="form-group">
+        <input class="form-control" type="text" name="description" value="<?= $imginfo["description"] ?>" />
+        <input class="form-control" type="text" name="subject" value="<?= $imginfo["subject"] ?>" />
+        <input class="form-control" type="text" name="place" value="<?= $imginfo["place"] ?>" />
+        <input class="form-control" type="date" name="timing" value="<?= $imginfo["timing"] ?>" />
+        <input class="form-control" type="submit" name="submit" value="Update Image" />
+      </div>
+    </form>
 <?php
+    endif;
   endif;
 ?>
 </div>

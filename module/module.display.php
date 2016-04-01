@@ -21,7 +21,7 @@ Class Display {
     }
   }
 
-  //return an array of all the images in the database
+  //return true if a user has permission to view an image
   public function canView($user,$imgid){
 
     //admin can view all images
@@ -51,6 +51,21 @@ Class Display {
     //return whether or not that row exists
     return $stmt->fetch()["count"] > 0;
 
+  }
+
+  //return true if a user has permission to edit an image
+  public function canEdit($user, $imgid){
+    //We'll allow the admin free reign here
+    if($user == "admin"){
+      return true;
+    }
+
+    $sql = "SELECT owner_name from images where images.photo_id = :imgid";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute(["imgid"=>$imgid]);
+    $data = $stmt->fetch();
+    //return true if we are the owner
+    return $data["owner_name"] == $user;
   }
 
   public function getImageFromId($imgid) {
