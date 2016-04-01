@@ -54,7 +54,7 @@
       $groupid = $stmt->lastInsertId();
 
       //Make the owner part of the group as well
-      $sql = "INSERT INTO group_lists (group_id, friend_id) VALUES (:groupid, :user)"
+      $sql = "INSERT INTO group_lists (group_id, friend_id) VALUES (:groupid, :user)";
       $stmt = $this->db->prepare($sql);
       $stmt->execute(["user"=>$user,"groupid"=>$groupid]);
     }
