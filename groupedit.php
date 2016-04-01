@@ -46,8 +46,8 @@
     <br />
     <form class="form">
       <div class="form-group" method="POST">
-        <input type="text" name="username" placeholder="User Name" />
-        <input type="submit" name="submit" value="Add User" />
+        <input class="form-control" type="text" name="username" placeholder="User Name" />
+        <input class="form-control" type="submit" name="submit" value="Add User" />
       </div>
     </form>
     <br />
