@@ -64,7 +64,7 @@ include_once('template/header.php');
       </div>
     </form>
     <a href="server/imagedelete.php?id=<?= $imginfo["photo_id"] ?>">
-      <button class="btn btn-danger" value="Delete Image" />
+      <button type="button" class="btn btn-danger">Delete Image</button>
     </a>
 <?php
     endif;
