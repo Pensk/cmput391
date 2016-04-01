@@ -37,6 +37,7 @@
         }
       ?>
     </ul>
+    <a href="server/groupdelete.php?id=<?= $groupinfo["group_id"] ?>" class="btn btn-danger">Delete Group</a>
     <?php
       endif;
     ?>
