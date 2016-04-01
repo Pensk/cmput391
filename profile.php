@@ -22,6 +22,10 @@ include_once('template/header.php');
 <a href="upload.php"><h4>Upload an Image</h4></a>
 <a href="search.php"><h4>Search for Images</h4></a>
 <br />
+<h3>Most Popular Images</h3>
+<?php
+  
+?>
 </div>
 <?php
 include_once('template/footer.php');
