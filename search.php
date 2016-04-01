@@ -32,9 +32,21 @@
     <h2>Image Search</h2>
 <form method="GET" clas="form">
   <div class="form-group">
-    <input class="form-control" type="text" name="searchtext" placeholder="Searchtext"><br />
+    <input class="form-control" type="text" name="searchtext" placeholder="Keywords (separate by space)"><br />
     <input class="form-control" type="date" name="startdate" placeholder="Startdate yyyy/mm/dd"><br />
     <input class="form-control" type="date" name="enddate" placeholder="Enddate yyyy/mm/dd">
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+    <label>
+      <input type="checkbox"> Keyword
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Date
+    </label>
+  </div>
   </div>
   <div class="form-group">
     <input class="form-control" type="submit" name="submit" value="Search">
