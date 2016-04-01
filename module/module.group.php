@@ -84,5 +84,12 @@
       $stmt->execute(["groupid"=>$groupid]);
     }
 
+    //Add a user to a group
+    public function addUser($groupid,$username){
+      $sql = "INSERT INTO group_lists (group_id, friend_id, date_added) VALUES (:groupid, :username, now())";
+      $stmt = $this->db->prepare($sql);
+      $stmt->execute(["groupid"=>$groupid,"username"=>$username]);
+    }
+
   }
 ?>

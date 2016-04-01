@@ -10,6 +10,10 @@
   include_once('module/module.group.php');
   $group = new Group;
 
+  if(isset($_POST["submit"])){
+    $group->addUser($groupid,$_POST["username"]);
+  }
+
   $pageTitle = "Edit Group";
   include_once('template/header.php');
 ?>
@@ -26,9 +30,11 @@
     <h2>Edit Group</h2><br />
     <h4>Name</h4>
     <form class="form" action="server/groupname.php" method="POST">
-      <input type="hidden" value="<?= $groupinfo["group_id"] ?>" name="groupid" />
-      <input type="text" value="<?= $groupinfo["group_name"] ?>" name="groupname" />
-      <input type="submit" name="submit" value="Update Name" />
+      <div class="form-group">
+      <input class="form-control" type="hidden" value="<?= $groupinfo["group_id"] ?>" name="groupid" />
+      <input class="form-control" type="text" value="<?= $groupinfo["group_name"] ?>" name="groupname" />
+      <input class="form-control" type="submit" name="submit" value="Update Name" />
+      </div>
     </form>
     <ul>
       <?php
@@ -37,6 +43,14 @@
         }
       ?>
     </ul>
+    <br />
+    <form class="form">
+      <div class="form-group" method="POST">
+        <input type="text" name="username" placeholder="User Name" />
+        <input type="submit" name="submit" value="Add User" />
+      </div>
+    </form>
+    <br />
     <a href="server/groupdelete.php?id=<?= $groupinfo["group_id"] ?>" class="btn btn-danger">Delete Group</a>
     <?php
       endif;
