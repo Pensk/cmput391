@@ -88,6 +88,12 @@ Class Display {
     $stmt->execute(["descr"=>$descr,"loc"=>$loc,"timing"=>$time,"subj"=>$subj,"imgid"=>$imgid,"permitted"=>$permitted]);
   }
 
+  public function deleteImage($imgid) {
+    $sql = "DELETE FROM images WHERE photo_id = :imgid";
+    $stmt = $this->db->prepare($sql);
+    $stmt->execute(["imgid"=>$imgid]);
+  }
+
   public function userViewed($user,$imgid){
     $sql = "INSERT INTO views (user_name, photo_id) VALUES (:user, :img)";
     $stmt = $this->db->prepare($sql);

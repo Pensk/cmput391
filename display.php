@@ -63,6 +63,9 @@ include_once('template/header.php');
         <input class="form-control" type="submit" name="submit" value="Update Image" />
       </div>
     </form>
+    <a href="server/imagedelete.php?id=<?= $imginfo["photo_id"] ?>">
+      <button class="btn btn-danger" value="Delete Image" />
+    </a>
 <?php
     endif;
     //add a view count for this image
