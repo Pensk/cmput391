@@ -5,6 +5,8 @@
     header('Location: login.php');
   }
 
+  $user = $_SESSION["user"];
+
   if(isset($_GET["submit"])){
     //to search the images
     include_once('module/module.search.php');
