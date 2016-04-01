@@ -7,3 +7,12 @@
 
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="upload.php">Upload</a></li>
+        <li><a href="search.php">Search</a></li>
+      </ul>
+    </div>
+  </nav>
