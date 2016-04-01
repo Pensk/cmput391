@@ -7,7 +7,7 @@
   $group = new Group;
 
   $user = $_SESSION["user"];
-  $groupid = $_GET["groupid"];
+  $groupid = $_GET["id"];
 
   if($group->isOwner($user,$groupid)){
     $group->deleteGroup($groupid);
