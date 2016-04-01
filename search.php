@@ -40,7 +40,7 @@
     foreach($result as $img):
   ?>
   <div class="col-md-4 text-center">
-  <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="img-responsive" width="100" height="100"/><br />
+  <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="img-responsive center-block" width="100" height="100"/><br />
   <h4><strong><?= $img["description"] ?></strong></h4><br /><?= $img["owner_name"] ?>
   </div>
 <?php
