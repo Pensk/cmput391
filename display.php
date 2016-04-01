@@ -53,7 +53,7 @@ include_once('template/header.php');
   ?>
     <form class="form" action="server/imageupdate.php" method="POST">
       <div class="form-group">
-        <input type="hidden" name="id" value="<?= $user ?>" />
+        <input type="hidden" name="id" value="<?= $imginfo["photo_id"] ?>" />
         <input class="form-control" type="text" name="description" value="<?= $imginfo["description"] ?>" />
         <input class="form-control" type="text" name="subject" value="<?= $imginfo["subject"] ?>" />
         <input class="form-control" type="text" name="place" value="<?= $imginfo["place"] ?>" />
