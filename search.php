@@ -34,21 +34,19 @@
   </div>
   </form>
   <hr />
-  <table class="table">
+  <div class="row">
   <?php
   if(isset($result)):
     $c = 1;
     foreach($result as $img):
       if($c % 3 == 0)
-        echo "<tr>";
+        echo "</div>\n<div class='row'>";
   ?>
-  <td>
+  <div class="col-md-6 text-center">
   <img src="server/image.php?id=<?= $img["photo_id"] ?>" class="center-block" width="100" height="100"/><br />
   <h4><strong><?= $img["description"] ?></strong></h4><br /><?= $img["owner_name"] ?>
-  </td>
+  </div>
 <?php
-      if($c % 3 == 0)
-        echo "<tr>";
       $c += 1;
     endforeach;
   endif;
